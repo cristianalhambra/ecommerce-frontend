@@ -1,66 +1,133 @@
-# TiendaFrontend
+# 🛍️ Ecommerce Frontend (Angular 21)
 
-Este proyecto se generó usando angular 21.0.1
+Frontend moderno desarrollado en **Angular 21** para una aplicación de comercio electrónico.  
+Incluye autenticación JWT, guards, servicios centralizados, componentes standalone y una arquitectura limpia y escalable.
 
-## Servidor de desarrollo
+## 🚀 Tecnologías principales
 
-Para iniciar un servidor de desarrollo local, ejecute:
+- **Angular 21**
+- **TypeScript**
+- **Standalone Components**
+- **Signals (estado reactivo)**
+- **Angular Router**
+- **Reactive Forms**
+- **HTTPClient**
+- **CSS modular**
 
-```bash
-ng servir
-```
+## 📦 Instalación
 
-Una vez que el servidor se esté ejecutando, abra su navegador y navegue a `http://localhost:4200/`. La aplicación se recargará automáticamente cada vez que modifique alguno de los archivos de origen.
+Clona el repositorio:
 
-## Andamios de código
+``bash
+git clone https://github.com/cristianalhambra/ecommerce-frontend.git
+cd ecommerce-frontend
 
-La CLI angular incluye potentes herramientas de andamiaje de código. Para generar un nuevo componente, ejecute:
+Instala dependencias:
+bash
 
-```bash
-ng generar componente componente-nombre
-```
+npm install
 
-Para obtener una lista completa de los esquemas disponibles (como `componentes`, `directivas` o `tuberías`), ejecute:
+▶️ Ejecutar en desarrollo
+bash
 
-```bash
-ng generar --ayuda
-```
+ng serve
 
-## Edificio
+La aplicación estará disponible en:
+Código
 
-Para construir el proyecto, ejecute:
+http://localhost:4200/
 
-```bash
-ng construir
-```
+🔐 Autenticación
 
-Esto compilará su proyecto y almacenará los artefactos de compilación en el directorio `dist/`. De forma predeterminada, la compilación de producción optimiza su aplicación para el rendimiento y la velocidad.
+El frontend se conecta al backend Spring Boot mediante JWT.
+Flujo implementado:
 
-## Ejecutando pruebas unitarias
+  Login con email y contraseña
 
-Para ejecutar pruebas unitarias localmente con la CLI angular (por defecto):
+  Guardado del token en localStorage
 
-```bash
-Prueba de ng
-```
+  Signals para estado global:
 
-Para ejecutar la suite de prueba con Vitest y generar un informe de cobertura (CI-friendly):
+  loggedIn
 
-```bash
-npm ejecutar test:ci
-```
+  userName
 
-El script `test:ci` ejecuta Vitest con cobertura y hace cumplir el umbral de cobertura del proyecto (por defecto, 80%).
+  Logout con limpieza de estado
 
-Este repositorio incluye un flujo de trabajo de GitHub Actions (`.github/workflows/ci-tests.yml`) que ejecuta `npm run test:ci` en push and pull requests to `main` y uploads `coverage/lcov.info` como un artefacto.
+  Interceptor (pendiente de implementar)
 
-## Realizando pruebas de extremo a extremo
+   Guards:
 
-Para pruebas de extremo a extremo (e2e), ejecute:
+  AuthGuard → protege rutas privadas
 
-```bash
-ng e2e
-```
+  AuthRedirectGuard → evita acceder a login/register si ya estás autenticado
+
+🧭 Navbar dinámico
+
+El navbar se actualiza automáticamente según el estado de autenticación:
+
+  Si el usuario no está logueado → muestra Login / Register
+
+  Si el usuario está logueado → muestra nombre + Logout
+
+Implementado como Standalone Component.
+🗂️ Estructura del proyecto
+Código
+
+src/app/
+│
+├── guards/
+│   ├── auth-guard.ts
+│   └── auth-redirect-guard.ts
+│
+├── services/
+│   ├── auth.service.ts
+│   └── user.service.ts
+│
+├── navbar/
+│   ├── navbar.ts
+│   ├── navbar.html
+│   └── navbar.css
+│
+├── pages/
+│   ├── login/
+│   ├── register/
+│   └── products/
+│
+└── app.routes.ts
+
+🔗 Conexión con el backend
+
+El backend debe estar corriendo en:
+Código
+
+http://localhost:8080
+
+Endpoints usados:
+
+  POST /api/v1/auth/login
+
+  POST /api/v1/auth/register
+
+  GET /api/v1/products (protegido)
+
+Configurable desde user.service.ts.
+🧪 Testing
+
+Incluye archivos .spec.ts generados por Angular para pruebas unitarias.
+
+Ejecutar tests:
+bash
+
+ng test
+
+📄 Scripts útiles
+Comando	Descripción
+ng serve	Ejecuta el servidor de desarrollo
+ng build	Compila para producción
+ng test	Ejecuta pruebas unitarias
+ng generate component	Crea un componente
+ng generate service	Crea un servicio
 
 👨‍💻 Autor
 
