@@ -1,69 +1,71 @@
 # TiendaFrontend
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.0.1.
+Este proyecto se generó usando angular 21.0.1
 
-## Development server
+## Servidor de desarrollo
 
-To start a local development server, run:
-
-```bash
-ng serve
-```
-
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Para iniciar un servidor de desarrollo local, ejecute:
 
 ```bash
-ng generate component component-name
+ng servir
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Una vez que el servidor se esté ejecutando, abra su navegador y navegue a `http://localhost:4200/`. La aplicación se recargará automáticamente cada vez que modifique alguno de los archivos de origen.
+
+## Andamios de código
+
+La CLI angular incluye potentes herramientas de andamiaje de código. Para generar un nuevo componente, ejecute:
 
 ```bash
-ng generate --help
+ng generar componente componente-nombre
 ```
 
-## Building
-
-To build the project run:
+Para obtener una lista completa de los esquemas disponibles (como `componentes`, `directivas` o `tuberías`), ejecute:
 
 ```bash
-ng build
+ng generar --ayuda
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+## Edificio
 
-## Running unit tests
-
-To execute unit tests locally with the Angular CLI (default):
+Para construir el proyecto, ejecute:
 
 ```bash
-ng test
+ng construir
 ```
 
-To run the test suite with Vitest and generate a coverage report (CI-friendly):
+Esto compilará su proyecto y almacenará los artefactos de compilación en el directorio `dist/`. De forma predeterminada, la compilación de producción optimiza su aplicación para el rendimiento y la velocidad.
+
+## Ejecutando pruebas unitarias
+
+Para ejecutar pruebas unitarias localmente con la CLI angular (por defecto):
 
 ```bash
-npm run test:ci
+Prueba de ng
 ```
 
-The `test:ci` script runs Vitest with coverage and enforces the project coverage threshold (default 80%).
+Para ejecutar la suite de prueba con Vitest y generar un informe de cobertura (CI-friendly):
 
-This repository includes a GitHub Actions workflow (`.github/workflows/ci-tests.yml`) that runs `npm run test:ci` on push and pull requests to `main` and uploads `coverage/lcov.info` as an artifact.
+```bash
+npm ejecutar test:ci
+```
 
-## Running end-to-end tests
+El script `test:ci` ejecuta Vitest con cobertura y hace cumplir el umbral de cobertura del proyecto (por defecto, 80%).
 
-For end-to-end (e2e) testing, run:
+Este repositorio incluye un flujo de trabajo de GitHub Actions (`.github/workflows/ci-tests.yml`) que ejecuta `npm run test:ci` en push and pull requests to `main` y uploads `coverage/lcov.info` como un artefacto.
+
+## Realizando pruebas de extremo a extremo
+
+Para pruebas de extremo a extremo (e2e), ejecute:
 
 ```bash
 ng e2e
 ```
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+👨‍💻 Autor
 
-## Additional Resources
+Cristian Alhambra  
+Desarrollador Full‑Stack (Angular + Spring Boot)
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+📜 Licencia
+Proyecto de uso personal y educativo.
