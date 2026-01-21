@@ -75,25 +75,44 @@ Implementado como Standalone Component.
 Código
 
 src/app/
+
 │
+
 ├── guards/
+
 │   ├── auth-guard.ts
+
 │   └── auth-redirect-guard.ts
+
 │
 ├── services/
+
 │   ├── auth.service.ts
+
 │   └── user.service.ts
+
 │
+
 ├── navbar/
+
 │   ├── navbar.ts
+
 │   ├── navbar.html
+
 │   └── navbar.css
+
 │
+
 ├── pages/
+
 │   ├── login/
+
 │   ├── register/
+
 │   └── products/
+
 │
+
 └── app.routes.ts
 
 🔗 Conexión con el backend
