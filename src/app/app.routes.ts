@@ -6,6 +6,7 @@ import { authRedirectGuard } from './guards/auth-redirect-guard';
 import { LoginComponent } from './auth/login/login';
 
 export const routes: Routes = [
+
   //RUTA EXPLÍCITA para /products (Asegura que el enlace del Navbar funcione)
   { path: 'products', 
     component: ProductListComponent, 
@@ -13,9 +14,23 @@ export const routes: Routes = [
     canActivate: [AuthGuard] 
   },
 
+  //Rutas de creación y edición de productos
+  { path: 'products/create', 
+    loadComponent: () => 
+      import('./product-create/product-create').then(m => m.ProductCreateComponent), 
+    canActivate: [AuthGuard], 
+    title: 'Crear Producto' 
+  }, 
+
+  { 
+    path: 'products/edit/:id',
+     loadComponent: () => 
+      import('./product-edit/product-edit').then(m => m.ProductEditComponent), 
+     canActivate: [AuthGuard], 
+     title: 'Editar Producto' 
+    },
+
   // Ruta por defecto: REDIRIGE a /products.
-  // Esto resuelve el conflicto, asegurando que al hacer clic en el logo ('/')
-  // siempre se navegue a la ruta explícita '/products', inicializando el componente de forma limpia.
   { path: '', 
     redirectTo: 'products', 
     pathMatch: 'full' },
@@ -36,4 +51,11 @@ export const routes: Routes = [
   { path: '**', 
     redirectTo: '', 
     pathMatch: 'full' },
+
+  //Ruta para el carrito de compras (Standalone Component)
+  { path: 'cart',
+    loadComponent: () => import('./cart/cart').then(m => m.CartComponent),
+    title: 'Carrito de Compras'
+  },
+
 ];

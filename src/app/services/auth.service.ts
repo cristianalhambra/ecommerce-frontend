@@ -40,8 +40,8 @@ export class AuthService {
         
         this.router.navigate(['/login']); 
       } 
-      // Obtener token si lo necesitas para interceptores 
+      // Obtenenemos el token de autenticación
       getToken() { 
-        return localStorage.getItem('authToken'); 
+        return localStorage.getItem('Token'); 
       } 
     }

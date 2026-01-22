@@ -9,9 +9,11 @@
     <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" class="space-y-6">
       <!-- Campo Username -->
       <div>
-        <label for="username" class="block text-sm font-semibold text-gray-700"
-          >Nombre de Usuario</label
-        >
+        <label for="username" class="block text-sm font-semibold text-gray-700">
+          Nombre de Usuario
+
+        </label>
+        
         <input
           id="username"
           type="text"
@@ -40,9 +42,10 @@
 
       <!-- Campo Email -->
       <div>
-        <label for="email" class="block text-sm font-semibold text-gray-700"
-          >Correo Electrónico</label
-        >
+        <label for="email" class="block text-sm font-semibold text-gray-700">
+          Correo Electrónico
+        </label>
+
         <input
           id="email"
           type="email"
@@ -130,8 +133,9 @@
       <p class="text-sm text-gray-600">
         ¿Ya tienes una cuenta?
         <a routerLink="/login" class="font-medium text-indigo-600 hover:text-indigo-500"
-          >Inicia Sesión</a
-        >
+          >Inicia Sesión
+        </a>
+        
       </p>
     </div>
   </div>

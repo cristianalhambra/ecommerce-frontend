@@ -2,18 +2,25 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterLink, RouterLinkActive, Router, NavigationEnd } from '@angular/router'; 
 import { CommonModule } from '@angular/common'; 
 import { filter } from 'rxjs/operators';
+import { RouterModule } from '@angular/router';
+import { CartService } from '../services/cart.service';
 
 @Component({ 
   selector: 'app-navbar', 
   standalone: true, 
-  imports: [CommonModule, RouterLink, RouterLinkActive], 
+  imports: [CommonModule, RouterLink, RouterLinkActive, RouterModule], 
   templateUrl: './navbar.html', 
+  styleUrls: ['./navbar.css'],
 }) 
 export class NavbarComponent implements OnInit { 
   private router = inject(Router); 
   
   loggedIn = false; 
   userName = ''; 
+
+  cart = inject(CartService);
+
+  goToCart() { this.router.navigate(['/cart']); }
   
     
   ngOnInit() { 
