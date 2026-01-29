@@ -1,8 +1,17 @@
 .avatar { 
-    width: 120px;
-     height: 120px; 
-     object-fit: cover; 
-     border-radius: 50%; 
-     border: 2px solid #ccc; 
-     margin-bottom: 12px;
+      width: 80px; 
+      height: 80px; 
+      border-radius: 50%; 
+      object-fit: cover; 
+      border: 3px solid #4f46e5; /* morado elegante */ 
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .product-img-preview {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 2px solid #4f46e5; /* morado elegante */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+      margin-top: 10px;
     }
