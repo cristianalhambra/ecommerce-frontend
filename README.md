@@ -141,11 +141,15 @@ bash
 ng test
 
 📄 Scripts útiles
-Comando	Descripción
+
 ng serve	Ejecuta el servidor de desarrollo
+
 ng build	Compila para producción
+
 ng test	Ejecuta pruebas unitarias
+
 ng generate component	Crea un componente
+
 ng generate service	Crea un servicio
 
 👨‍💻 Autor
