@@ -1,0 +1,82 @@
+<h2 class="text-2xl font-bold mb-6">Mi Perfil</h2> 
+
+<!-- AVATAR --> 
+ <div class="mb-8"> 
+    <h3 class="font-semibold mb-2">Foto de Perfil</h3> 
+
+     <div class="flex flex-col items-center gap-4">
+
+    <img 
+    [src]="avatarPreview || auth.user()?.avatarUrl || 'https://via.placeholder.com/120'" 
+    class="avatar rounded-full object-cover mb-4"
+    alt="Avatar"
+    /> 
+
+    <label for="avatarInput" class="px-4 py-2 text-sm font-medium bg-gray-100 hover:bg-gray-200 rounded-md cursor-pointer" > 
+        Cambiar foto 
+    </label> 
+    
+    <input type="file" (change)="onAvatarSelected($event)" /> 
+    
+ </div> 
+</div>
+
+<!-- NOMBRE --> 
+ <div class="border p-4 rounded mb-6"> 
+    <h3 class="font-semibold mb-2">Cambiar Nombre</h3> 
+    
+    <form [formGroup]="nameForm" (ngSubmit)="updateName()"> 
+        <input class="border p-2 w-full mb-2" formControlName="name" placeholder="Nombre" /> 
+        <button class="bg-yellow-600 text-white px-4 py-2 rounded">Guardar Nombre</button> 
+    </form>
+
+<!-- EMAIL --> 
+ <div class="border p-4 rounded mb-6"> 
+    <h3 class="font-semibold mb-2">Cambiar Email</h3> 
+    
+    <form [formGroup]="emailForm" (ngSubmit)="updateEmail()"> 
+        <input class="border p-2 w-full mb-2" formControlName="email" type="email" /> 
+        <button class="bg-blue-600 text-white px-4 py-2 rounded">Guardar Email</button> 
+    </form> 
+</div> 
+
+<!-- CONTRASEÑA --> <div class="border p-4 rounded mb-6">
+     <h3 class="font-semibold mb-2">Cambiar Contraseña</h3> 
+     
+     <form [formGroup]="passwordForm" (ngSubmit)="updatePassword()"> 
+        <input class="border p-2 w-full mb-2" type="password" placeholder="Contraseña actual" formControlName="currentPassword" /> 
+        <input class="border p-2 w-full mb-2" type="password" placeholder="Nueva contraseña" formControlName="newPassword" /> 
+        <button class="bg-green-600 text-white px-4 py-2 rounded">Cambiar Contraseña</button> 
+    </form> 
+</div> 
+
+<!-- DIRECCIÓN --> 
+ <div class="border p-4 rounded mb-6"> 
+    <h3 class="font-semibold mb-2">Dirección de Envío</h3> 
+    
+    <form [formGroup]="addressForm" (ngSubmit)="updateAddress()"> 
+        <input class="border p-2 w-full mb-2" placeholder="Calle" formControlName="street" /> 
+        <input class="border p-2 w-full mb-2" placeholder="Ciudad" formControlName="city" /> 
+        <input class="border p-2 w-full mb-2" placeholder="Código Postal" formControlName="postalCode" /> 
+        <input class="border p-2 w-full mb-2" placeholder="País" formControlName="country" /> 
+        <button class="bg-purple-600 text-white px-4 py-2 rounded">Guardar Dirección</button> 
+    </form> 
+</div> 
+
+<!-- HISTORIAL DE PEDIDOS --> 
+ <div class="border p-4 rounded mb-6"> <h3 class="font-semibold mb-2">Historial de Pedidos</h3> 
+    
+    <p class="text-gray-600">Tienes 0 pedidos</p> 
+</div>
+
+<!-- ELIMINAR CUENTA --> 
+ <div class="border p-4 rounded mb-6"> 
+    <h3 class="font-semibold mb-2 text-red-600">Eliminar Cuenta</h3> 
+
+    <button 
+    (click)="deleteAccount()" 
+    class="bg-red-600 text-white px-4 py-2 rounded" 
+    > 
+    Eliminar Cuenta 
+ </button> 
+</div>

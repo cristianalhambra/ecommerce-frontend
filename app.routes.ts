@@ -67,7 +67,17 @@ export const routes: Routes = [
       import('./checkout/checkout').then(m => m.CheckoutComponent), 
      canActivate: [authGuard], 
      title: 'Finalizar Compra' 
-    },
+  },
+
+  //Ruta para la privacidad (Standalone Component)
+  { path: 'privacy', loadComponent: () => import('./legal/privacy/privacy').then(m => m.Privacy) 
+
+  },
+
+  //Ruta para los términos y condiciones (Standalone Component)
+  { path: 'terms', loadComponent: () => import('./legal/terms/terms').then(m => m.Terms)
+
+  },
 
   //Ruta para cualquier otra URL no definida(404 - Not Found)
   { 

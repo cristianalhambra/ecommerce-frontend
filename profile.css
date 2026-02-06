@@ -1,0 +1,7 @@
+.avatar { 
+    width: 100px; /* ancho del avatar */ 
+    height: 100px; /* alto del avatar */ 
+    border-radius: 50%; /* círculo perfecto */
+     object-fit: cover; /* evita deformaciones */ 
+     border: 3px solid #ddd; /* borde elegante */
+}
